@@ -1,0 +1,25 @@
+{
+	"name": "@a11d/eslint-config",
+	"version": "0.0.1",
+	"description": "The ESLint configuration I'm currently using!",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/arshia11d/eslint-config.git"
+	},
+	"keywords": [
+		"eslint"
+	],
+	"author": "arshia11d",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/arshia11d/eslint-config/issues"
+	},
+	"homepage": "https://github.com/arshia11d/eslint-config#readme",
+	"dependencies": {
+		"@typescript-eslint/eslint-plugin": "*",
+		"@typescript-eslint/parser": "*",
+		"eslint": "*",
+		"eslint-plugin-import": "*",
+		"eslint-plugin-lit": "*"
+	}
+}
