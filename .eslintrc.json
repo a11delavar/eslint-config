@@ -79,7 +79,10 @@
 			"error",
 			"tab",
 			{
-				"SwitchCase": 1
+				"SwitchCase": 1,
+				"ignoredNodes": [
+					"TemplateLiteral *"
+				]
 			}
 		],
 		"no-trailing-spaces": "error",
@@ -131,14 +134,10 @@
 			}
 		],
 		"no-restricted-syntax": [
-			"error",
+			"warning",
 			{
 				"selector": "TSEnumDeclaration:not([const=true])",
-				"message": "MoDeL: Don't declare non-const enums to decrease application size at runtime"
-			},
-			{
-				"selector": "Identifier[name='bind']",
-				"message": "MoDeL: Try to declare arrow functions to avoid using context bindings"
+				"message": "Don't declare non-const enums to decrease application size at runtime"
 			}
 		],
 		"no-eval": "error",
@@ -152,6 +151,14 @@
 		"object-curly-spacing": [
 			"error",
 			"always"
+		],
+		"max-lines": [
+			"warning",
+			{
+				"max": 1000,
+				"skipComments": true,
+				"skipBlankLines": true
+			}
 		]
 	}
 }
