@@ -1,6 +1,6 @@
 {
 	"name": "@a11d/eslint-config",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"description": "The ESLint configuration I'm currently using!",
 	"repository": {
 		"type": "git",

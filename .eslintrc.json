@@ -134,7 +134,7 @@
 			}
 		],
 		"no-restricted-syntax": [
-			"warning",
+			"warn",
 			{
 				"selector": "TSEnumDeclaration:not([const=true])",
 				"message": "Don't declare non-const enums to decrease application size at runtime"
@@ -153,7 +153,7 @@
 			"always"
 		],
 		"max-lines": [
-			"warning",
+			"warn",
 			{
 				"max": 1000,
 				"skipComments": true,
