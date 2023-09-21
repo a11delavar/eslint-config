@@ -50,7 +50,6 @@
 		],
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-this-alias": "off",
-		"@typescript-eslint/no-non-null-assertion": "warn",
 		"@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
 		"@typescript-eslint/no-namespace": "off",
 		"@typescript-eslint/no-empty-function": "off",
@@ -131,13 +130,6 @@
 			{
 				"beforeColon": false,
 				"afterColon": true
-			}
-		],
-		"no-restricted-syntax": [
-			"warn",
-			{
-				"selector": "TSEnumDeclaration:not([const=true])",
-				"message": "Don't declare non-const enums to decrease application size at runtime"
 			}
 		],
 		"no-eval": "error",
