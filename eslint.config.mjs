@@ -2,6 +2,7 @@ import typescriptEslint from '@typescript-eslint/eslint-plugin'
 import lit from 'eslint-plugin-lit'
 // import globals from 'globals'
 import tsParser from '@typescript-eslint/parser'
+import stylisticJs from '@stylistic/eslint-plugin-js'
 import stylisticTs from '@stylistic/eslint-plugin-ts'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -29,6 +30,7 @@ export default [
 	{
 		plugins: {
 			'@typescript-eslint': typescriptEslint,
+			'@stylistic/js': stylisticJs,
 			'@stylistic/ts': stylisticTs,
 			lit,
 		},
@@ -84,39 +86,39 @@ export default [
 
 			'@typescript-eslint/explicit-module-boundary-types': 'off',
 
-			indent: ['error', 'tab', {
+			'@stylistic/ts/indent': ['error', 'tab', {
 				SwitchCase: 1,
 				ignoredNodes: ['TemplateLiteral *'],
 			}],
 
-			'no-trailing-spaces': 'error',
-			'eol-last': ['error', 'never'],
-			semi: ['error', 'never'],
-			quotes: ['error', 'single'],
+			'@stylistic/js/no-trailing-spaces': 'error',
+			'@stylistic/js/eol-last': ['error', 'never'],
+			'@stylistic/ts/semi': ['error', 'never'],
+			'@stylistic/ts/quotes': ['error', 'single'],
 			'no-unused-vars': 'off',
 			'no-case-declarations': 'off',
 			'no-self-assign': 'off',
 			'no-useless-escape': 'off',
 
-			'brace-style': ['error', '1tbs', {
+			'@stylistic/ts/brace-style': ['error', '1tbs', {
 				allowSingleLine: true,
 			}],
 
-			'keyword-spacing': ['error', {
+			'@stylistic/ts/keyword-spacing': ['error', {
 				before: true,
 				after: true,
 			}],
 
 			'no-console': 'error',
-			'space-before-blocks': 'error',
-			'space-infix-ops': 'error',
+			'@stylistic/ts/space-before-blocks': 'error',
+			'@stylistic/ts/space-infix-ops': 'error',
 
-			'comma-spacing': ['error', {
+			'@stylistic/ts/comma-spacing': ['error', {
 				before: false,
 				after: true,
 			}],
 
-			'key-spacing': ['error', {
+			'@stylistic/ts/key-spacing': ['error', {
 				beforeColon: false,
 				afterColon: true,
 			}],
@@ -125,8 +127,8 @@ export default [
 			eqeqeq: 'error',
 			'no-return-await': 'error',
 			'require-await': 'error',
-			'template-curly-spacing': ['error', 'never'],
-			'object-curly-spacing': ['error', 'always'],
+			'@stylistic/js/template-curly-spacing': ['error', 'never'],
+			'@stylistic/ts/object-curly-spacing': ['error', 'always'],
 
 			'max-lines': ['warn', {
 				max: 1000,
