@@ -1,6 +1,6 @@
 {
 	"name": "@a11d/eslint-config",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "The ESLint configuration I'm currently using!",
 	"repository": {
 		"type": "git",
@@ -16,11 +16,13 @@
 	},
 	"homepage": "https://github.com/a11delavar/eslint-config#readme",
 	"dependencies": {
+		"@html-eslint/eslint-plugin": "x",
+		"@html-eslint/parser": "x",
+		"@stylistic/eslint-plugin-js": "x",
+		"@stylistic/eslint-plugin-ts": "x",
 		"@typescript-eslint/eslint-plugin": "x",
 		"@typescript-eslint/parser": "x",
 		"eslint": "x",
-		"eslint-plugin-lit": "x",
-		"@stylistic/eslint-plugin-js": "x",
-		"@stylistic/eslint-plugin-ts": "x"
+		"eslint-plugin-lit": "x"
 	}
 }

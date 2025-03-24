@@ -4,6 +4,7 @@ import lit from 'eslint-plugin-lit'
 import tsParser from '@typescript-eslint/parser'
 import stylisticJs from '@stylistic/eslint-plugin-js'
 import stylisticTs from '@stylistic/eslint-plugin-ts'
+import eslintHTML from '@html-eslint/eslint-plugin'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import js from '@eslint/js'
@@ -33,16 +34,15 @@ export default [
 			'@stylistic/js': stylisticJs,
 			'@stylistic/ts': stylisticTs,
 			lit,
+			'@html-eslint': eslintHTML,
 		},
 
 		languageOptions: {
-			// globals: {
-			// 	...globals.browser,
-			// },
 			parser: tsParser,
 		},
 
 		rules: {
+			'no-duplicate-imports': 'error',
 			'lit/no-missing-import': 'off',
 			'@stylistic/ts/type-annotation-spacing': ['warn', {
 				before: false,
@@ -68,6 +68,14 @@ export default [
 			'@typescript-eslint/no-empty-interface': 'off',
 			'no-prototype-builtins': 'off',
 			'@typescript-eslint/no-unused-expressions': 'off',
+
+			'@typescript-eslint/consistent-type-imports': ['error',
+				{
+					prefer: 'type-imports',
+					fixStyle: 'inline-type-imports',
+					disallowTypeAnnotations: false
+				}
+			],
 
 			'@stylistic/ts/member-delimiter-style': ['error', {
 				multiline: {
@@ -135,6 +143,23 @@ export default [
 				skipComments: true,
 				skipBlankLines: true,
 			}],
+
+			...eslintHTML.configs['flat/recommended'].rules,
+			'@html-eslint/indent': ['error', 'tab'],
+			'@html-eslint/quotes': 'off',
+			'@html-eslint/attrs-newline': 'off',
+			'@html-eslint/require-img-alt': 'off',
+			'@html-eslint/require-lang': 'off',
+		},
+
+		settings: {
+			html: {
+				templateLiterals: {
+					// default options
+					tags: ['^html$'],
+					comments: ['^\\s*html\\s*$'],
+				}
+			}
 		},
 	}
 ]
