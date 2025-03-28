@@ -1,6 +1,6 @@
 {
 	"name": "@a11d/eslint-config",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "The ESLint configuration I'm currently using!",
 	"repository": {
 		"type": "git",
@@ -23,6 +23,6 @@
 		"@typescript-eslint/eslint-plugin": "x",
 		"@typescript-eslint/parser": "x",
 		"eslint": "x",
-		"eslint-plugin-lit": "x"
+		"eslint-plugin-lit": "1.x"
 	}
 }
