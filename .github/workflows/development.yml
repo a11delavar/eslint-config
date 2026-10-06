@@ -1,0 +1,42 @@
+name: Development Stage
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  qa:
+    name: Quality Assurance
+    uses: ./.github/workflows/qa.yml
+
+  Release:
+    name: 📦 Publish Pending Version
+    needs: qa
+    runs-on: ubuntu-latest
+    # npm trusts this workflow file in this environment, which only "main" may deploy to, so publishing needs no token.
+    environment: npm
+    concurrency:
+      group: release
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout Repository ⬇️
+        uses: actions/checkout@v7
+      - name: Setup Node ⬇️
+        uses: actions/setup-node@v6
+        with:
+          node-version: 26.x
+          cache: 'npm'
+
+      - name: Publish 🚀
+        run: |
+          version=$(node -p "require('./package.json').version")
+          if [ -n "$(npm view "@a11d/eslint-config@$version" version)" ]; then
+            echo "@a11d/eslint-config@$version is published already."
+          else
+            npm publish --access public
+          fi

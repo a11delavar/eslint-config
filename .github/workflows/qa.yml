@@ -1,0 +1,19 @@
+name: 🔍 Quality Assurance
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  lint:
+    name: 📝 Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 26.x
+          cache: 'npm'
+      - run: npm ci
+      # The configuration lints itself, which also proves that it loads.
+      - run: npx eslint .

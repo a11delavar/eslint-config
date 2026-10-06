@@ -1,7 +1,7 @@
 {
 	"name": "@a11d/eslint-config",
-	"version": "1.2.1",
-	"description": "The ESLint configuration I'm currently using!",
+	"version": "2.0.0",
+	"description": "A shared ESLint configuration for TypeScript and Lit projects, with type-aware rules and Stylistic formatting.",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/a11delavar/eslint-config.git"
@@ -15,14 +15,24 @@
 		"url": "https://github.com/a11delavar/eslint-config/issues"
 	},
 	"homepage": "https://github.com/a11delavar/eslint-config#readme",
+	"type": "module",
+	"main": "eslint.config.mjs",
+	"files": [
+		"eslint.config.mjs"
+	],
 	"dependencies": {
+		"@eslint/js": "10.x",
 		"@html-eslint/eslint-plugin": "x",
-		"@html-eslint/parser": "x",
-		"@stylistic/eslint-plugin-js": "x",
-		"@stylistic/eslint-plugin-ts": "x",
-		"@typescript-eslint/eslint-plugin": "x",
-		"@typescript-eslint/parser": "x",
-		"eslint": "x",
-		"eslint-plugin-lit": "1.x"
+		"@stylistic/eslint-plugin": "x",
+		"eslint-plugin-lit": "2.x",
+		"typescript-eslint": "8.x"
+	},
+	"peerDependencies": {
+		"eslint": "^10.0.0",
+		"typescript": ">=5"
+	},
+	"devDependencies": {
+		"eslint": "10.x",
+		"typescript": "6.x"
 	}
 }
